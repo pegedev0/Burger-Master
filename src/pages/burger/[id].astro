@@ -1,0 +1,61 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import { burgers } from '../../../cart.json';
+
+export function getStaticPaths () {
+    const numberOfBurgers = burgers.length
+    const arr = []
+
+    for (let i = 0; i <= numberOfBurgers - 1; i++) {
+        arr.push({ params: { id: i } })
+    }
+
+    return arr
+}
+
+const { id } = Astro.params;
+const burgerId = parseInt(id, 10);
+const burger = burgers.find(burger => burger.id.toString() === id.toString())
+---
+
+<ViewTransitions />
+
+<Layout title={`Burger Master - ${burger.name}`}>
+    <section class="flex flex-col -mt-14 md:-mt-0 md:flex-row justify-center items-center gap-14 px-8 md:px-20 pt-32 pb-24" transition:name="burger">
+        <div class="flex flex-row">
+            <a href={`/burger/${burgerId > 0 ? burgerId - 1 : burgers.length - 1}`} class="cursor-pointer md:hover:scale-110 duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mt-14 w-14 md:w-32" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>
+            </a>
+
+            <div class="flex flex-col md:flex-row">
+                <picture>
+                    <Image 
+                        src={burger.image}
+                        alt={burger.name}
+                        width="800"
+                        height="800"
+                    />   
+                </picture>
+                
+                <div class="flex flex-col items-center md:items-start md:ml-4 mt-8"> 
+                    <h1 class="text-4xl md:text-6xl uppercase text-center md:text-start pb-5 text-yellow-300">{burger.name}</h1>
+                    <span class="text-pretty text-lg text-center md:text-start pt-5 md:pt-2 pb-5 md:text-xl 3xl:text-2xl">{burger.description}</span>
+                    <span class="bg-green-100 text-green-800 mt-5 md:mt-0 text-xl font-medium me-2 w-20 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">{burger.price}€</span>
+                </div>
+            </div>
+            
+            <a href={`/burger/${burgerId < burgers.length - 1 ? burgerId + 1 : 0 }`} class="cursor-pointer md:hover:scale-110 duration-300">
+                <svg  xmlns="http://www.w3.org/2000/svg" class="mt-14 w-14 md:w-32"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" /></svg>
+            </a>
+        </section>
+
+        <a href="/burgers" class="underline text-center flex justify-center">Ver todas</a>
+    </div>
+
+    <div class="bottom-0 md:absolute md:w-screen">
+        <Footer />
+    </div>
+</Layout>

@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import CartButton from '../components/CartButton.astro';
+import initBurger from '../../public/initBurger.webp'
+---
+
+<section class="pb-20 md:pb-0 md:pt-0 h-screen flex items-center justify-center relative">
+    <div class="absolute -z-10 inset-0">
+        <Image
+            src="https://static.burgerkingencasa.es/bkhomewebsite/images/home-car-01.jpg"
+            class="h-screen w-auto object-cover opacity-40"
+            alt="BurguerMaster"
+            width="100"
+            height="100"
+        />
+    </div>
+    
+    <div class="md:flex mx-10 md:-mt-14 justify-center items-center">
+        <Image 
+            src={initBurger}
+            alt="BurguerMaster"
+            width="600"
+            height="600"
+        />
+
+        <div class="flex flex-col items-center md:mx-24 md:items-end">
+            <div class="flex flex-col justify-center items-center md:items-end text-5xl md:text-8xl 3xl:text-9xl">
+                <h1>SABOREA LA</h1>
+                <h1 class="text-yellow-300">EXCELENCIA</h1>
+            </div>
+            <CartButton />
+        </div>
+    </div>
+</section>

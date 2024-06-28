@@ -1,0 +1,36 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import { burgers } from '../../cart.json'
+---
+
+<ViewTransitions />
+
+<Layout title="Burger Master - Carta">
+    <h1 class="text-6xl text-center pt-14 underline text-yellow-300">CARTA</h1>
+    <section class="pt-24 md:pt-12">
+        <ul class="grid grid-cols-2 md:grid-cols-4 justify-items-center px-2 md:px-14" transition:name="burger">
+        {
+            burgers.map(burger => (
+                <li class="flex items-center">
+                    <a class="cursor-pointer" href={`../burger/${burger.id}`}>
+                        <picture>
+                            <Image 
+                                src={burger.image}
+                                alt={burger.name}
+                                width="300"
+                                height="300"
+                                class="hover:scale-110 duration-300"
+                            />
+                        </picture>
+                        <h3 class="text-white text-center pt-6 text-xl md:text-2xl uppercase pb-20">{burger.name}</h3>
+                    </a>
+                </li>
+            ))
+        }
+        </ul>
+    </section>
+    <Footer />
+</Layout>

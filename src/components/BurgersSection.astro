@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import { burgers } from '../../cart.json'
+---
+
+<section class="pt-14 md:pt-12" transition:name="burger">
+    <ul class="md:flex justify-between px-8 grid grid-cols-2 gap-10 md:gap-0">
+    {
+        burgers.slice(0,4).map(burger => (
+            <li>
+                <a href={`../burger/${burger.id}`} class="cursor-pointer">
+                    <Image 
+                        src={burger.image}
+                        alt={burger.name}
+                        width="300"
+                        height="300"
+                        class="hover:scale-110 duration-300"
+                    />
+                    <h3 class="text-white text-center pt-6 text-xl md:text-2xl uppercase">{burger.name}</h3>
+                </a>
+            </li>
+        ))
+    }
+    </ul>
+    <a class="underline text-sm flex justify-center mt-14 cursor-pointer" href="/burgers">Ver más</a>
+</section>

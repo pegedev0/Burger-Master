@@ -1,0 +1,60 @@
+{
+    "burgers": [
+        {
+            "id": 0,
+            "name": "Clásica BK Deluxe",
+            "description": "Una hamburguesa icónica con carne a la parrilla, queso fundido, lechuga crujiente, tomate jugoso y una salsa especial única, todo en un pan suave sin semillas.",
+            "image": "https://gps.burgerkingencasa.es/images/products/1693829825827_homeria_CCB_sin_semillas_copia.png",
+            "price": 12.99
+        },
+        {
+            "id": 1,
+            "name": "Doble Bacon y Cheddar",
+            "description": "Una combinación perfecta de dos jugosas carnes a la parrilla, bacon crujiente, queso cheddar derretido y salsa BBQ, servida en un pan recién horneado.",
+            "image": "https://gps.burgerkingencasa.es/images/products/1660734544367_steakhouse-new.png",
+            "price": 14.99
+        },
+        {
+            "id": 2,
+            "name": "Pollo Rey",
+            "description": "Deliciosa pechuga de pollo empanizada y frita, acompañada de lechuga fresca, tomate y mayonesa, servida en un suave pan brioche.",
+            "image": "https://gps.burgerkingencasa.es/images/products/1700549041491_KING_CHICKEN_briocheSS.png",
+            "price": 11.99
+        },
+        {
+            "id": 3,
+            "name": "Gran Parrilla BBQ",
+            "description": "Una hamburguesa premium con carne a la parrilla, cebolla crujiente, bacon, queso cheddar, lechuga, tomate y salsa BBQ, todo en un pan con semillas de sésamo.",
+            "image": "https://gps.burgerkingencasa.es/images/products/1693909322303_homeria_duo-bacon-cheddar-menu_doble-carne_SS.png",
+            "price": 15.99
+        },
+        {
+            "id": 4,
+            "name": "Clásica BK XL",
+            "description": "Una clásica hamburguesa de Burger King con carne a la parrilla, queso derretido, lechuga crujiente, tomate fresco y una deliciosa salsa especial, todo en un pan suave sin semillas.",
+            "image": "https://gps.burgerkingencasa.es/images/products/1675158582375_Homeria_BigKingXXL_600x411.png",
+            "price": 12.99
+        },
+        {
+            "id": 5,
+            "name": "Doble Sabor Bacon y Cheddar",
+            "description": "Dos jugosas carnes a la parrilla combinadas con bacon crujiente, queso cheddar derretido y salsa BBQ, servidas en un pan recién horneado.",
+            "image": "https://gps.burgerkingencasa.es/images/products/1686128930780_THE_KING_HUEVO_1C_600x411.png",
+            "price": 14.99
+        },
+        {
+            "id": 6,
+            "name": "Rey de Pollo",
+            "description": "Pechuga de pollo empanizada y frita, acompañada de lechuga fresca, tomate y mayonesa, servida en un suave pan brioche.",
+            "image": "https://gps.burgerkingencasa.es/images/products/1675158551533_Homeria_BigKing_600x411.png",
+            "price": 11.99
+        },
+        {
+            "id": 7,
+            "name": "BBQ Suprema",
+            "description": "Una hamburguesa premium con carne a la parrilla, cebolla crujiente, bacon, queso cheddar, lechuga, tomate y salsa BBQ, todo en un pan con semillas de sésamo.",
+            "image": "https://gps.burgerkingencasa.es/images/products/1676446120994_Homeria_WHOPPER_JR_600x411.png",
+            "price": 15.99
+        }
+    ]
+}
